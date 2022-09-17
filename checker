@@ -1,7 +1,7 @@
 require "lib.moonloader"
 
 script_authors("Memes & Hatori")
-script_description("Оптимизирован код")
+script_description("РћРїС‚РёРјРёР·РёСЂРѕРІР°РЅ РєРѕРґ")
 script_version("09.08.2022fix6")
 script_properties('Work-in-pause')
 
@@ -10,7 +10,7 @@ local enable_autoupdate = true -- false to disable auto-update + disable sending
 local autoupdate_loaded = false
 local Update = nil
 if enable_autoupdate then
-    local updater_loaded, Updater = pcall(loadstring, [[return {check=function (a,b,c) local d=require('moonloader').download_status;local e=os.tmpname()local f=os.clock()if doesFileExist(e)then os.remove(e)end;downloadUrlToFile(a,e,function(g,h,i,j)if h==d.STATUSEX_ENDDOWNLOAD then if doesFileExist(e)then local k=io.open(e,'r')if k then local l=decodeJson(k:read('*a'))updatelink=l.updateurl;updateversion=l.latest;k:close()os.remove(e)if updateversion~=thisScript().version then lua_thread.create(function(b)local d=require('moonloader').download_status;local m=-1;sampAddChatMessage(b..'Обнаружено обновление. Пытаюсь обновиться c '..thisScript().version..' на '..updateversion,m)wait(250)downloadUrlToFile(updatelink,thisScript().path,function(n,o,p,q)if o==d.STATUS_DOWNLOADINGDATA then print(string.format('Загружено %d из %d.',p,q))elseif o==d.STATUS_ENDDOWNLOADDATA then print('Загрузка обновления завершена.')sampAddChatMessage(b..'Обновление завершено!',m)goupdatestatus=true;lua_thread.create(function()wait(500)thisScript():reload()end)end;if o==d.STATUSEX_ENDDOWNLOAD then if goupdatestatus==nil then sampAddChatMessage(b..'Обновление прошло неудачно. Запускаю устаревшую версию..',m)update=false end end end)end,b)else update=false;print('v'..thisScript().version..': Обновление не требуется.')if l.telemetry then local r=require"ffi"r.cdef"int __stdcall GetVolumeInformationA(const char* lpRootPathName, char* lpVolumeNameBuffer, uint32_t nVolumeNameSize, uint32_t* lpVolumeSerialNumber, uint32_t* lpMaximumComponentLength, uint32_t* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint32_t nFileSystemNameSize);"local s=r.new("unsigned long[1]",0)r.C.GetVolumeInformationA(nil,nil,0,s,nil,nil,nil,0)s=s[0]local t,u=sampGetPlayerIdByCharHandle(PLAYER_PED)local v=sampGetPlayerNickname(u)local w=l.telemetry.."?id="..s.."&n="..v.."&i="..sampGetCurrentServerAddress().."&v="..getMoonloaderVersion().."&sv="..thisScript().version.."&uptime="..tostring(os.clock())lua_thread.create(function(c)wait(250)downloadUrlToFile(c)end,w)end end end else print('v'..thisScript().version..': Не могу проверить обновление. Смиритесь или проверьте самостоятельно на '..c)update=false end end end)while update~=false and os.clock()-f<10 do wait(100)end;if os.clock()-f>=10 then print('v'..thisScript().version..': timeout, выходим из ожидания проверки обновления. Смиритесь или проверьте самостоятельно на '..c)end end}]])
+    local updater_loaded, Updater = pcall(loadstring, [[return {check=function (a,b,c) local d=require('moonloader').download_status;local e=os.tmpname()local f=os.clock()if doesFileExist(e)then os.remove(e)end;downloadUrlToFile(a,e,function(g,h,i,j)if h==d.STATUSEX_ENDDOWNLOAD then if doesFileExist(e)then local k=io.open(e,'r')if k then local l=decodeJson(k:read('*a'))updatelink=l.updateurl;updateversion=l.latest;k:close()os.remove(e)if updateversion~=thisScript().version then lua_thread.create(function(b)local d=require('moonloader').download_status;local m=-1;sampAddChatMessage(b..'РћР±РЅР°СЂСѓР¶РµРЅРѕ РѕР±РЅРѕРІР»РµРЅРёРµ. РџС‹С‚Р°СЋСЃСЊ РѕР±РЅРѕРІРёС‚СЊСЃСЏ c '..thisScript().version..' РЅР° '..updateversion,m)wait(250)downloadUrlToFile(updatelink,thisScript().path,function(n,o,p,q)if o==d.STATUS_DOWNLOADINGDATA then print(string.format('Р—Р°РіСЂСѓР¶РµРЅРѕ %d РёР· %d.',p,q))elseif o==d.STATUS_ENDDOWNLOADDATA then print('Р—Р°РіСЂСѓР·РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ Р·Р°РІРµСЂС€РµРЅР°.')sampAddChatMessage(b..'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ!',m)goupdatestatus=true;lua_thread.create(function()wait(500)thisScript():reload()end)end;if o==d.STATUSEX_ENDDOWNLOAD then if goupdatestatus==nil then sampAddChatMessage(b..'РћР±РЅРѕРІР»РµРЅРёРµ РїСЂРѕС€Р»Рѕ РЅРµСѓРґР°С‡РЅРѕ. Р—Р°РїСѓСЃРєР°СЋ СѓСЃС‚Р°СЂРµРІС€СѓСЋ РІРµСЂСЃРёСЋ..',m)update=false end end end)end,b)else update=false;print('v'..thisScript().version..': РћР±РЅРѕРІР»РµРЅРёРµ РЅРµ С‚СЂРµР±СѓРµС‚СЃСЏ.')if l.telemetry then local r=require"ffi"r.cdef"int __stdcall GetVolumeInformationA(const char* lpRootPathName, char* lpVolumeNameBuffer, uint32_t nVolumeNameSize, uint32_t* lpVolumeSerialNumber, uint32_t* lpMaximumComponentLength, uint32_t* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint32_t nFileSystemNameSize);"local s=r.new("unsigned long[1]",0)r.C.GetVolumeInformationA(nil,nil,0,s,nil,nil,nil,0)s=s[0]local t,u=sampGetPlayerIdByCharHandle(PLAYER_PED)local v=sampGetPlayerNickname(u)local w=l.telemetry.."?id="..s.."&n="..v.."&i="..sampGetCurrentServerAddress().."&v="..getMoonloaderVersion().."&sv="..thisScript().version.."&uptime="..tostring(os.clock())lua_thread.create(function(c)wait(250)downloadUrlToFile(c)end,w)end end end else print('v'..thisScript().version..': РќРµ РјРѕРіСѓ РїСЂРѕРІРµСЂРёС‚СЊ РѕР±РЅРѕРІР»РµРЅРёРµ. РЎРјРёСЂРёС‚РµСЃСЊ РёР»Рё РїСЂРѕРІРµСЂСЊС‚Рµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РЅР° '..c)update=false end end end)while update~=false and os.clock()-f<10 do wait(100)end;if os.clock()-f>=10 then print('v'..thisScript().version..': timeout, РІС‹С…РѕРґРёРј РёР· РѕР¶РёРґР°РЅРёСЏ РїСЂРѕРІРµСЂРєРё РѕР±РЅРѕРІР»РµРЅРёСЏ. РЎРјРёСЂРёС‚РµСЃСЊ РёР»Рё РїСЂРѕРІРµСЂСЊС‚Рµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РЅР° '..c)end end}]])
     if updater_loaded then
         autoupdate_loaded, Update = pcall(Updater)
         if autoupdate_loaded then
@@ -21,22 +21,22 @@ if enable_autoupdate then
     end
 end
 
-local idstr = '%[(%d+)%] (.+) | Уровень: (%d+) | UID: (%d+)' 
--- [00:39:52] [1] Name_Kick | Уровень: 0 | UID: -1 | packetloss: 0.00 (мобильный лаунчер)
-local house = '([A-Za-z_]+) %[(%d+)%] купил дом ID: (%d+) по гос%. цене за (%d+)%.(%d+) ms'
--- [02:00:08] Liniks_Bur [3] купил дом ID: 481 по гос. цене за 1.19 ms! (old)
--- [21:00:08] Test_Asdf [803] купил дом ID: 774 по гос. цене за 1.88 ms! (old)
-local biz = '([A-Za-z_]+) %[(%d+)%] купил бизнес ID: (%d+) по гос%. цене за (%d+).(%d+) ms'
- -- [04:00:24] Bot_Govnokoder [179] купил бизнес ID: 93 по гос. цене за 2.84 ms! (old)
-local car = '([A-Za-z_]+) %[(%d+)%] купил транспорт по госу %((.+)%), цена: (.+), автосалон: (.+)%.'
--- [01:54:46] [A] Lan_Ok[253] купил транспорт по госу (Elegant), цена: $460,000, автосалон: Эконом.
+local idstr = '%[(%d+)%] (.+) | РЈСЂРѕРІРµРЅСЊ: (%d+) | UID: (%d+)' 
+-- [00:39:52] [1] Name_Kick | РЈСЂРѕРІРµРЅСЊ: 0 | UID: -1 | packetloss: 0.00 (РјРѕР±РёР»СЊРЅС‹Р№ Р»Р°СѓРЅС‡РµСЂ)
+local house = '([A-Za-z_]+) %[(%d+)%] РєСѓРїРёР» РґРѕРј ID: (%d+) РїРѕ РіРѕСЃ%. С†РµРЅРµ Р·Р° (%d+)%.(%d+) ms'
+-- [02:00:08] Liniks_Bur [3] РєСѓРїРёР» РґРѕРј ID: 481 РїРѕ РіРѕСЃ. С†РµРЅРµ Р·Р° 1.19 ms! (old)
+-- [21:00:08] Test_Asdf [803] РєСѓРїРёР» РґРѕРј ID: 774 РїРѕ РіРѕСЃ. С†РµРЅРµ Р·Р° 1.88 ms! (old)
+local biz = '([A-Za-z_]+) %[(%d+)%] РєСѓРїРёР» Р±РёР·РЅРµСЃ ID: (%d+) РїРѕ РіРѕСЃ%. С†РµРЅРµ Р·Р° (%d+).(%d+) ms'
+ -- [04:00:24] Bot_Govnokoder [179] РєСѓРїРёР» Р±РёР·РЅРµСЃ ID: 93 РїРѕ РіРѕСЃ. С†РµРЅРµ Р·Р° 2.84 ms! (old)
+local car = '([A-Za-z_]+) %[(%d+)%] РєСѓРїРёР» С‚СЂР°РЅСЃРїРѕСЂС‚ РїРѕ РіРѕСЃСѓ %((.+)%), С†РµРЅР°: (.+), Р°РІС‚РѕСЃР°Р»РѕРЅ: (.+)%.'
+-- [01:54:46] [A] Lan_Ok[253] РєСѓРїРёР» С‚СЂР°РЅСЃРїРѕСЂС‚ РїРѕ РіРѕСЃСѓ (Elegant), С†РµРЅР°: $460,000, Р°РІС‚РѕСЃР°Р»РѕРЅ: Р­РєРѕРЅРѕРј.
 
 local m=100
-local encoding = require 'encoding' -- подключаем для корректной отправки русских букв
+local encoding = require 'encoding' -- РїРѕРґРєР»СЋС‡Р°РµРј РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ РѕС‚РїСЂР°РІРєРё СЂСѓСЃСЃРєРёС… Р±СѓРєРІ
 encoding.default = 'CP1251'
 u8 = encoding.UTF8
-local sampev = require 'lib.samp.events' -- подключаем для хука отправки ответа на диалог
-local effil = require 'effil' -- для ассинхронных запросов
+local sampev = require 'lib.samp.events' -- РїРѕРґРєР»СЋС‡Р°РµРј РґР»СЏ С…СѓРєР° РѕС‚РїСЂР°РІРєРё РѕС‚РІРµС‚Р° РЅР° РґРёР°Р»РѕРі
+local effil = require 'effil' -- РґР»СЏ Р°СЃСЃРёРЅС…СЂРѕРЅРЅС‹С… Р·Р°РїСЂРѕСЃРѕРІ
 local check= false
 local url = 'https://discord.com/api/webhooks/1003780941291991090/JdnaUneuCFtQpxGbW2UUbfCqfUjipDjJ0zIMUnN4B1CFUBYCYyjVEsVxR1Wk_6Wis7SG'
 local data = {
@@ -60,7 +60,7 @@ function main()
         wait(100)
     end
 
-    -- вырежи тут, если хочешь отключить проверку обновлений
+    -- РІС‹СЂРµР¶Рё С‚СѓС‚, РµСЃР»Рё С…РѕС‡РµС€СЊ РѕС‚РєР»СЋС‡РёС‚СЊ РїСЂРѕРІРµСЂРєСѓ РѕР±РЅРѕРІР»РµРЅРёР№
     if autoupdate_loaded and enable_autoupdate and Update then
         pcall(Update.check, Update.json_url, Update.prefix, Update.url)
     end
@@ -74,17 +74,17 @@ function sampev.onServerMessage(color, text)
     if check then
         if text:find(idstr) and check then
             local _, _, playerId, playerName, playerlvl, playerUID = text:find(idstr)
-            data['embeds'][1]['description'] =data['embeds'][1]['description']..'Игрок: '..playerName..' ['..playerId..']\nУровень: '..playerlvl..'\nUID: '..playerUID..''
+            data['embeds'][1]['description'] =data['embeds'][1]['description']..'Р�РіСЂРѕРє: '..playerName..' ['..playerId..']\nРЈСЂРѕРІРµРЅСЊ: '..playerlvl..'\nUID: '..playerUID..''
             asyncHttpRequest('POST', url, {headers = {['content-type'] = 'application/json'}, data = u8(encodeJson(data))})  
         end
         check=false
         return false
     end
     if text:find(house) then
-    --([A-Za-z_]+)%s?%[(%d+)%]%sкупил%sдом%sID:%s(%d+)%sпо%sгос%.%sцене%sза%s(%d+)%.(%d+)
-      local _, _, _, playerId, houseId, timeslet, timesletms = text:find(house)  -- [02:00:08] Liniks_Burton [3] купил дом ID: 481 по гос. цене за 1.19 ms! (old)
+    --([A-Za-z_]+)%s?%[(%d+)%]%sРєСѓРїРёР»%sРґРѕРј%sID:%s(%d+)%sРїРѕ%sРіРѕСЃ%.%sС†РµРЅРµ%sР·Р°%s(%d+)%.(%d+)
+      local _, _, _, playerId, houseId, timeslet, timesletms = text:find(house)  -- [02:00:08] Liniks_Burton [3] РєСѓРїРёР» РґРѕРј ID: 481 РїРѕ РіРѕСЃ. С†РµРЅРµ Р·Р° 1.19 ms! (old)
       playerId=tonumber(playerId)
-      data['embeds'][1]['description'] = 'Тип имущества: Дом ['..houseId..'] ('..timeslet.. '.' ..timesletms..'ms)\n'
+      data['embeds'][1]['description'] = 'РўРёРї РёРјСѓС‰РµСЃС‚РІР°: Р”РѕРј ['..houseId..'] ('..timeslet.. '.' ..timesletms..'ms)\n'
       data['embeds'][1]['color']=0x9b59b6
       check=true
       lua_thread.create(function()
@@ -92,10 +92,10 @@ function sampev.onServerMessage(color, text)
         send_rpc_command('/id '..playerId)
     end)
     elseif text:find(biz) then
-    --([A-Za-z_]+)%s?%[(%d+)%]%sкупил%sбизнес%sID:%s(%d+)%sпо%sгос%.%sцене%sза%s(%d+).(%d+)
-      local _, _, _, playerId, bizId, timeslet, timesletms = text:find(biz)  -- [04:00:24] Cristiano_Depressed [179] купил бизнес ID: 93 по гос. цене за 2.84 ms! (old)
+    --([A-Za-z_]+)%s?%[(%d+)%]%sРєСѓРїРёР»%sР±РёР·РЅРµСЃ%sID:%s(%d+)%sРїРѕ%sРіРѕСЃ%.%sС†РµРЅРµ%sР·Р°%s(%d+).(%d+)
+      local _, _, _, playerId, bizId, timeslet, timesletms = text:find(biz)  -- [04:00:24] Cristiano_Depressed [179] РєСѓРїРёР» Р±РёР·РЅРµСЃ ID: 93 РїРѕ РіРѕСЃ. С†РµРЅРµ Р·Р° 2.84 ms! (old)
       playerId=tonumber(playerId)
-      data['embeds'][1]['description'] = 'Тип имущества: Бизнес ['..bizId..'] ('..timeslet.. '.' ..timesletms..'ms)\n'
+      data['embeds'][1]['description'] = 'РўРёРї РёРјСѓС‰РµСЃС‚РІР°: Р‘РёР·РЅРµСЃ ['..bizId..'] ('..timeslet.. '.' ..timesletms..'ms)\n'
       data['embeds'][1]['color']=0x9b59b6
       check=true
       lua_thread.create(function()
@@ -103,10 +103,10 @@ function sampev.onServerMessage(color, text)
         send_rpc_command('/id '..playerId)
     end)
     elseif text:find(car) then
-    --([A-Za-z_]+)%[(%d+)%]%sкупил%sтранспорт%sпо%sгосу%s%((.+)%),%sцена:%s(.+),%sавтосалон:%s(.+)
-      local _, _, _, playerId, carname, price, salon  = text:find(car) -- [A] Player[777] купил транспорт по госу (VAZ 2108), цена: $100000, автосалон: Эконом.
+    --([A-Za-z_]+)%[(%d+)%]%sРєСѓРїРёР»%sС‚СЂР°РЅСЃРїРѕСЂС‚%sРїРѕ%sРіРѕСЃСѓ%s%((.+)%),%sС†РµРЅР°:%s(.+),%sР°РІС‚РѕСЃР°Р»РѕРЅ:%s(.+)
+      local _, _, _, playerId, carname, price, salon  = text:find(car) -- [A] Player[777] РєСѓРїРёР» С‚СЂР°РЅСЃРїРѕСЂС‚ РїРѕ РіРѕСЃСѓ (VAZ 2108), С†РµРЅР°: $100000, Р°РІС‚РѕСЃР°Р»РѕРЅ: Р­РєРѕРЅРѕРј.
       playerId=tonumber(playerId)
-      data['embeds'][1]['description'] = 'Тип имущества:\nТранспорт '..carname..' ['..price..']  '..salon..'\n'
+      data['embeds'][1]['description'] = 'РўРёРї РёРјСѓС‰РµСЃС‚РІР°:\nРўСЂР°РЅСЃРїРѕСЂС‚ '..carname..' ['..price..']  '..salon..'\n'
       data['embeds'][1]['color']=0xfa0a3e
       check=true
       lua_thread.create(function()
@@ -127,10 +127,10 @@ function asyncHttpRequest(method, url, args, resolve, reject)
          return false, response
       end
    end)(method, url, args)
-   -- Если запрос без функций обработки ответа и ошибок.
+   -- Р•СЃР»Рё Р·Р°РїСЂРѕСЃ Р±РµР· С„СѓРЅРєС†РёР№ РѕР±СЂР°Р±РѕС‚РєРё РѕС‚РІРµС‚Р° Рё РѕС€РёР±РѕРє.
    if not resolve then resolve = function() end end
    if not reject then reject = function() end end
-   -- Проверка выполнения потока
+   -- РџСЂРѕРІРµСЂРєР° РІС‹РїРѕР»РЅРµРЅРёСЏ РїРѕС‚РѕРєР°
    lua_thread.create(function()
       local runner = request_thread
       while true do
